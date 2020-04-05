@@ -175,6 +175,8 @@ class App extends Component {
 
     createToken(sessionId) {
         return new Promise((resolve, reject) => {
+            sessionId.replace("localhost", "68.183.244.225");
+
             var data = JSON.stringify({ session: sessionId });
             axios
                 .post(this.OPENVIDU_SERVER_URL + '/api/tokens', data, {
