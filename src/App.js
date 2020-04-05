@@ -6,7 +6,7 @@ import OpenViduSession from 'openvidu-react';
 class App extends Component {
     constructor(props) {
         super(props);
-        this.OPENVIDU_SERVER_URL = 'https://localhost:4443';
+        this.OPENVIDU_SERVER_URL = 'https://stag-cr.edecofy.com/';
         this.OPENVIDU_SERVER_SECRET = 'MY_SECRET';
         this.state = {
             mySessionId: 'SessionA',
