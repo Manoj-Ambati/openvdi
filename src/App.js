@@ -52,6 +52,7 @@ class App extends Component {
     joinSession(event) {
         if (this.state.mySessionId && this.state.myUserName) {
             this.getToken().then((token) => {
+                token=token.replace("localhost", "68.183.244.225");
                 this.setState({
                     token: token,
                     session: true,
@@ -175,7 +176,7 @@ class App extends Component {
 
     createToken(sessionId) {
         return new Promise((resolve, reject) => {
-            sessionId.replace("localhost", "68.183.244.225");
+            
 
             var data = JSON.stringify({ session: sessionId });
             axios
