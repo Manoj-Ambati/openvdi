@@ -6,7 +6,7 @@ import OpenViduSession from 'openvidu-react';
 class App extends Component {
     constructor(props) {
         super(props);
-        this.OPENVIDU_SERVER_URL = 'https://68.183.244.225:4443';
+        this.OPENVIDU_SERVER_URL = `https://${window.location.hostname}:4443`;
         this.OPENVIDU_SERVER_SECRET = 'MY_SECRET';
         this.state = {
             mySessionId: 'SessionA',
@@ -177,7 +177,7 @@ class App extends Component {
     createToken(sessionId) {
         return new Promise((resolve, reject) => {
             
-
+           
             var data = JSON.stringify({ session: sessionId });
             axios
                 .post(this.OPENVIDU_SERVER_URL + '/api/tokens', data, {
